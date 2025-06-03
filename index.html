@@ -138,15 +138,20 @@
         <div class="content has-text-justified">
           <img src="static/images/teaser.png" alt="">
           <p>
-            Recent works in volume rendering, \textit{e.g.} NeRF and 3D Gaussian Splatting (3DGS), significantly advance the rendering quality and efficiency with the help of the learned implicit neural radiance field or 3D Gaussians. 
-            Rendering on top of an explicit representation, the vanilla 3DGS and its variants deliver real-time efficiency by optimizing the parametric model with single-view supervision per iteration during training which is adopted from NeRF. Consequently, certain views are overfitted, leading to unsatisfying appearance in novel-view synthesis and imprecise 3D geometries.
-            To solve aforementioned problems, we propose a new 3DGS optimization method embodying four key novel contributions:
-            1) We transform the conventional single-view training paradigm into a multi-view training strategy. With our proposed multi-view regulation, 3D Gaussian attributes are further optimized without overfitting certain training views. As a general solution, we improve the overall accuracy in a variety of scenarios and different Gaussian variants. 
-            2) Inspired by the benefit introduced by additional views, we further propose a cross-intrinsic guidance scheme, leading to a coarse-to-fine training procedure concerning different resolutions.
-            3) Built on top of our multi-view regulated training, we further propose a cross-ray densification strategy, densifying more Gaussian kernels in the ray-intersect regions from a selection of views. 
-            4) By further investigating the densification strategy, we found that the effect of densification should be enhanced when certain views are distinct dramatically.
-            As a solution, we propose a novel multi-view augmented densification strategy, where 3D Gaussians are encouraged to get densified to a sufficient number accordingly, resulting in improved reconstruction accuracy.
-            We conduct extensive experiments to demonstrate that our proposed method is capable of improving novel view synthesis of the Gaussian-based explicit representation methods about 1 dB PSNR for various tasks.          </p>
+          Recent works in volume rendering, \textit{e.g.}, Neural Radiance Field (NeRF) and 3D Gaussian Splatting (3DGS), have significantly advanced rendering quality and efficiency.
+          However, existing Gaussian-based novel view synthesis methods typically follow a single-view optimization paradigm.
+          We observed that this optimization paradigm suffers from unstable gradients, leading to suboptimal rendering quality.
+          To tackle this issue, we present a novel multi-view regulated Gaussian Splatting (MVGS) that fully leverages a multi-view coherent (MVC) constraint throughout the optimization process.
+          Specifically, our proposed MVC enhances 3D Gaussian multi-view consistency and thus ensures smoother gradient updates.
+          Furthermore, single-scale training usually leads to suboptimal solutions.
+          To further improve the convergence of multi-view optimization in 3DGS, we propose a cross-intrinsic guidance scheme in a coarse-to-fine manner.
+          In particular, by incorporating more multi-view images at the low resolution, we can optimize 3D Gaussians with a more comprehensive perspective. Then, finer-scale Gaussians are initialized by coarsely estimated ones instead of optimizing full-scale 3D Gaussians from scratch.
+          Moreover, we found that 3D Gaussians usually struggle to fit 2D training views with minimal overlap.
+          Thus, we propose a novel multi-view cross-ray densification strategy, where 3D Gaussians are dynamically split to accommodate drastic viewpoint variations in the multi-view optimization process.
+          In this way, the multi-view consistency can be further improved.
+          Notably, our proposed MVGS method is a plug-and-play optimizer.
+          Extensive experiments across various tasks demonstrate that our MVGS method not only achieves state-of-the-art performance but also improves 1 dB PSNR
+          for existing Gaussian-based methods.
         </div>
       </div>
     </div>
