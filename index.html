@@ -63,7 +63,9 @@
             <span class="author-block">
               <a href="https://wangyida.github.io/">Yida Wang</a><sup>3</sup>
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
-
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=cHia5p0AAAAJ">Richard Hartley</a><sup>4</sup>
+            </span>
             <span class="author-block">
               <a href="https://sites.google.com/view/xinyus-homepage/Home">Xin Yu</a><sup>2+</sup>
             </span>
@@ -72,7 +74,8 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>The University of Technology Sydney</span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="author-block"><sup>2</sup>The University of Queensland</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block"><sup>3</sup>Liauto Inc.</span>
+            <span class="author-block"><sup>3</sup>Liauto Inc.</span> &nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>4</sup>The Australian National University</span>
 
           </div>
 
@@ -160,36 +163,37 @@
 </head>
 <body>
 
-<section class="section">
-  <div class="container is-max-desktop">
+<!--<section class="section">-->
+<!--  <div class="container is-max-desktop">-->
 
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+<!--    &lt;!&ndash; Method. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-full-width">-->
+<!--        <h2 class="title is-3" style="margin-top: -20px">Method</h2>-->
 
-        <img src="static/images/method.png" class="center">
-        <div class="content has-text-justified">
-          <p style="margin-top: 30px">
-            <b>Pipeline of MVGS.</b> We propose to incorporate multiple training views per training iteration by multi-view regulated learning.
-            It forces the whole 3D Gaussians to learn the structure and appearance of multiple views jointly without suffering overfitting issues met in learning from a single view.
-            It enables 3DGS to be constrained to the whole scene and less overfitting to certain views. 
-            To incorporate more multi-view information, we propose a cross-intrinsic guidance strategy to optimize 3DGS from low resolution to high resolution.
-            The low-resolution training allows plenty of multi-view information as a powerful constraint to build more compact 3D Gaussians.
-            It also conveys learned scene structure for high-resolution training to sculpt finer detail. 
-            To foster the learning of multi-view information, we further propose a cross-ray densification strategy, utilizing the ray marching technology with the guidance of the 2D loss maps to guide densification. The 3D Gaussians in overlapped 3D regions of cross rays would be densified to improve reconstruction performance for these views since these 3D Gaussians jointly serve and play an important role in the rendering of these views.
-            In addition, we propose a multi-view augmented densification strategy when discrepancies between perspectives are significant. 
-            This approach encourages 3D Gaussians to densify more primitives, enabling better fitting across various perspectives and improving overall 
-            NVS performance.
-          </p>
-        </div>
+<!--&lt;!&ndash;        <img src="static/images/method.png" class="center">&ndash;&gt;-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p style="margin-top: 30px">-->
+<!--            <b>Pipeline of MVGS.</b>-->
+<!--            We propose to incorporate multiple training views per training iteration by multi-view regulated learning.-->
+<!--            It forces the whole 3D Gaussians to learn the structure and appearance of multiple views jointly without suffering overfitting issues met in learning from a single view.-->
+<!--            It enables 3DGS to be constrained to the whole scene and less overfitting to certain views. -->
+<!--            To incorporate more multi-view information, we propose a cross-intrinsic guidance strategy to optimize 3DGS from low resolution to high resolution.-->
+<!--            The low-resolution training allows plenty of multi-view information as a powerful constraint to build more compact 3D Gaussians.-->
+<!--            It also conveys learned scene structure for high-resolution training to sculpt finer detail. -->
+<!--            To foster the learning of multi-view information, we further propose a cross-ray densification strategy, utilizing the ray marching technology with the guidance of the 2D loss maps to guide densification. The 3D Gaussians in overlapped 3D regions of cross rays would be densified to improve reconstruction performance for these views since these 3D Gaussians jointly serve and play an important role in the rendering of these views.-->
+<!--            In addition, we propose a multi-view augmented densification strategy when discrepancies between perspectives are significant. -->
+<!--            This approach encourages 3D Gaussians to densify more primitives, enabling better fitting across various perspectives and improving overall -->
+<!--            NVS performance.-->
+<!--          </p>-->
+<!--        </div>-->
 
-      </div>
-    </div>
-    <!--/ Animation. -->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Animation. &ndash;&gt;-->
 
-  </div>
-</section>
+<!--  </div>-->
+<!--</section>-->
 
 </body>
 </html>
@@ -247,15 +251,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{du2024mvgsmultiviewregulatedgaussiansplatting,
-      title={MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis},
-      author={Xiaobiao Du and Yida Wang and Xin Yu},
-      year={2024},
-      eprint={2410.02103},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2410.02103},
-}</code></pre>
+    <pre><code>
+  @article{du2024mvgs,
+  title={Mvgs: Multi-view-regulated gaussian splatting for novel view synthesis},
+  author={Du, Xiaobiao and Wang, Yida and Yu, Xin},
+  journal={arXiv preprint arXiv:2410.02103},
+  year={2024}
+  }
+  </code></pre>
   </div>
 </section>
 
